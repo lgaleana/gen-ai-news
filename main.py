@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from gnews_api import fetch_news
 
 app = FastAPI()
 
@@ -8,4 +9,5 @@ def read_root():
 
 @app.get('/news')
 def get_news():
-    return {'message': 'News endpoint'}
+    news = fetch_news('gen ai')
+    return news
