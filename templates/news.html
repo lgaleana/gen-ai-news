@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gen AI News</title>
+</head>
+<body>
+    <h1>Gen AI News</h1>
+    {% for article in articles %}
+    <div>
+        <h2><a href="{{ article.url }}">{{ article.title }}</a></h2>
+        <p>{{ article.description }}</p>
+        <p>Published at: {{ article.publishedAt }}</p>
+        <p>Source: <a href="{{ article.source.url }}">{{ article.source.name }}</a></p>
+    </div>
+    {% endfor %}
+</body>
+</html>
